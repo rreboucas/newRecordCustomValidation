@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <div class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+        <lightning:recordEditForm aura:id="recordViewForm" 
+                                  recordId="00UB00000021r4AMAQ"
+                                  objectApiName="Event">
+            <lightning:messages />
+            <lightning:inputField fieldName="Subject" />
+            <lightning:inputField fieldName="WhatId" />
+            
+        </lightning:recordEditForm>
+    </div>  
+    <!-- Record Display -->    
+    <div class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+        <lightning:recordViewForm recordId="00UB00000021r4AMAQ" objectApiName="Event">
+            <div class="slds-box">
+                <lightning:outputField fieldName="Subject" />
+                <lightning:outputField fieldName="WhatId" />
+            </div>
+        </lightning:recordViewForm>
+    </div>   
+
+	
+</aura:component>

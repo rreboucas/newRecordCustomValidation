@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <a href="https://www.salesforce.com" data-record="recordID" onclick="{!c.incrementCount}">Test Post URL</a>
+
+	
+</aura:component>

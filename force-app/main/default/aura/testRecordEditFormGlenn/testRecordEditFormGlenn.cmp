@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="fName" type="String" access="global"/> 
+    <aura:attribute name="lName" type="String" access="global"/> 
+    <aura:attribute name="eml" type="String" access="global"/> 
+    
+    
+    <lightning:recordEditForm recordId="003B0000003yTNOIA2" objectApiName="Contact">
+        <lightning:messages />
+        <lightning:inputField aura:id="fName"  value="{!v.fName}" fieldName="FirstName" />
+        <lightning:inputField aura:id="lName"  value="{!v.lName}" fieldName="LastName" />
+        <lightning:inputField aura:id="eml" value="{!v.eml}" fieldName="Email" />
+        	<lightning:button variant="brand" label="Submit" onclick="{! c.fieldChanged }" />
+    </lightning:recordEditForm>
+</aura:component>

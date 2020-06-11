@@ -1,0 +1,22 @@
+<template> 
+    <template if:true={canCreateChildren}>
+        <lightning-card>
+            <p class="slds-p-horizontal_small">
+                <lightning-record-form
+                    object-api-name="testautonumdata__Quality_Event__c"
+                    fields={fields}
+                    onerror={handleError}
+                    oncancel={handleCancel}
+                    onsuccess={handleSuccess}
+                    onsubmit={handleSubmit}>
+                </lightning-record-form>
+            </p>
+        </lightning-card>
+    </template>
+    <template if:false={canCreateChildren}>
+        <p>You cannot create Child records because the Parent record status field value is No Children.</p>
+        <p>
+            <lightning-button variant="destructive-text" label="Back" title="Destructive action with a lighter look" onclick={handleBackClick} class="slds-m-left_x-small"></lightning-button>
+        </p>
+    </template>
+</template>

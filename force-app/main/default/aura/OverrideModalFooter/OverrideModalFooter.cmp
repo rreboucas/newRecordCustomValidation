@@ -1,0 +1,11 @@
+<aura:component >
+     <lightning:layout horizontalAlign="end">
+         <lightning:layoutItem padding="around-small">
+             <lightning:buttonGroup>
+                <lightning:button label="Cancel" />
+                <lightning:button variant="brand" label="Save" />
+            </lightning:buttonGroup>
+         </lightning:layoutItem>
+    </lightning:layout>
+	
+</aura:component>

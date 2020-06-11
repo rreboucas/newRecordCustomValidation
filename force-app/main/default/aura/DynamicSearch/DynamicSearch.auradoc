@@ -1,0 +1,47 @@
+<aura:documentation>
+    <aura:meta name="owner" value="Presentation Components" />
+    <aura:meta name="formFactors" value="all" />
+    <aura:meta name="isSubComponent" value="false" />
+    <aura:meta name="sldsLink" value="/components/buttons" />
+    <aura:meta name="category" value="Buttons" />
+    <aura:meta name="classification" value="Base" />
+
+  <aura:description>
+    <p>The <code>c:DynamicSearch</code> component is a quick search list Lightning Component that let's you load a list of Salesforce records based on the Sobject that you specify and allows your users to search/filter the list of records to quickly access the records that they need to access. Users can click on top of the records to go to the Record page in the Lightning Experience and Salesforce Mobile.</p>
+    <p>Use the <code>variant</code> and <code>class</code> attributes to apply additional styling.</p>
+    <p>The Lightning Design System utility icon category provides nearly 200 utility icons that can be used in <code>lightning:button</code> along with label text. Although SLDS provides several categories of icons, only the utility category can be used in this component.</p>
+    <p>Visit <a href="https://lightningdesignsystem.com/icons/#utility" target="_blank">https://lightningdesignsystem.com/icons/#utility</a> to view the utility icons.</p>
+    <p>This component inherits styling from <a href="https://www.lightningdesignsystem.com/components/buttons/" target="_blank">buttons</a> in the Lightning Design System.</p>
+    <p>Here's an example that creates a button with the brand variant, which displays a label on the button.</p>
+    <pre>&lt;aura:component>
+    &lt;lightning:button variant="brand" label="Submit" onclick="{! c.handleClick }" />
+&lt;/aura:component></pre>
+    <p>Here's another example that creates a button with the brand variant, which displays a label and icon on the button.</p>
+    <pre>&lt;aura:component>
+    &lt;lightning:button variant="brand" label="Download" iconName="utility:download" iconPosition="left" onclick="{! c.handleClick }" />
+&lt;/aura:component></pre>
+    <p>You can retrieve the button that's clicked by using <code>event.getSource()</code>.
+    For example, to retrieve the label on the button, use <code>event.getSource().get("v.label")</code>.</p>
+    <h4>Accessibility</h4>
+    <p>To inform screen readers that a button is disabled, set the <code>disabled</code> attribute to true.</p>
+    <h4>Methods</h4>
+    <p>This component supports the following method.</p>
+    <p><code>focus()</code>: Sets focus on the element.</p>
+  </aura:description>
+
+<aura:example name="exampleRegularButtons" ref="lightningComponentDemo:exampleRegularButtons" label="Basic Buttons">
+    <p>Button variants display the buttons with different colors to convey different meanings. The default variant is <code>neutral</code>.</p>
+</aura:example>
+<aura:example name="exampleButtonsDisabled" ref="lightningComponentDemo:exampleButtonsDisabled" label="Disabled Buttons">
+    <p>The following example creates buttons that are disabled. Disabled buttons can't be clicked.</p>
+</aura:example>
+<aura:example name="exampleRegularButtonsIcon" ref="lightningComponentDemo:exampleRegularButtonsIcon" label="Buttons with Icons">
+    <p>Include an icon next to your button label for decorative purposes. Choose from 200 Lightning Design System utility icons to use with <code>lightning:button</code>. The default icon position is left.</p>
+</aura:example>
+<aura:example name="exampleButtonsInverse" ref="lightningComponentDemo:exampleButtonsInverse" label="Inverse Variant">
+    <p>Use the <code>inverse</code> variant to display a button on a dark background.</p>
+</aura:example>
+<aura:example name="exampleButtonsAccessibility" ref="lightningComponentDemo:exampleButtonsAccessibility" label="Buttons with Accesskey and Tabindex Attributes">
+    <p>The following example defines access key shortcuts on buttons and determines the order in which those buttons are visited when using the tab key.</p>
+</aura:example>
+</aura:documentation>

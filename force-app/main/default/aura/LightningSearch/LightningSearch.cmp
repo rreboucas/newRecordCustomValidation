@@ -1,0 +1,45 @@
+<aura:component controller="ContactController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="lstContacts" type="Contact[]" />
+    <aura:attribute name="searchKey" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div class="slds" style="padding-right: 0.5%;padding-bottom: 0.5%; padding-left: 0.5%;">
+    	
+    	<div class="slds" style="padding-right: 0.5%;padding-bottom: 0.5%; padding-left: 0.5%;">
+    	<div class="slds-page-header" role="banner">
+                  <div class="slds-grid">
+                    <div class="slds-col slds-has-flexi-truncate">
+                      <div class="slds-grid">
+                        <div class="slds-grid slds-type-focus slds-no-space">
+
+                            
+                                
+                                    <img src="{!$Resource.lightningicons + '/lightningicons/images/lightning-logo.png'}" style="width: 30px;height: 24px; padding-right:4px;"/>
+                            
+                                <h1 class="slds-page-header__title slds-truncate">Lightning Search</h1>
+                            
+                            
+
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="slds-text-body--small slds-page-header__info"></p>
+                </div>
+        </div>        
+                <!-- End of Header  -->
+
+
+    	<div>
+	        <ui:inputText aura:id="searchArea" placeholder="Enter contact name..." class="field" keyup="{!c.searchKeyChange}" updateOn="keyup"/>
+	        
+	        <ul>
+	        	<aura:iteration items="{!v.lstContacts}" var="contact">
+	                <li>{!contact.Name}</li>
+	            </aura:iteration>
+	        </ul>
+    	</div>
+	</div>
+
+</aura:component>

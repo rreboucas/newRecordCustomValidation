@@ -1,0 +1,27 @@
+.THIS {
+    background-color: coral;
+}
+
+.THIS.toggle {
+    display: none;
+    
+}
+
+
+.THIS .slds-page-header {
+
+}
+
+.THIS .sidenav {   
+    
+    height:100%;
+}
+
+.THIS div:hover {
+    left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+.THIS header {   
+    
+    visibility: hidden;
+}
