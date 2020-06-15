@@ -14,9 +14,20 @@
         </lightning-card>
     </template>
     <template if:false={canCreateChildren}>
-        <p>You cannot create Child records because the Parent record status field value is No Children.</p>
-        <p>
-            <lightning-button variant="destructive-text" label="Back" title="Destructive action with a lighter look" onclick={handleBackClick} class="slds-m-left_x-small"></lightning-button>
+        <lightning-layout>
+            <lightning-layout-item padding="horizontal-large" size="1">
+                <lightning-icon icon-name="action:close" alternative-text="Error" size="small" title="Validation Error"></lightning-icon>
+            </lightning-layout-item>
+            <lightning-layout-item padding="horizontal-large" size="11">
+                You cannot create Child records because the Parent record status field value is No Children.</p>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout horizontal-align="center">
+            <lightning-layout-item padding="around-large" size="12">
+                <lightning-button variant="destructive-text" label="Back" title="Destructive action with a lighter look" onclick={handleBackClick} class="slds-m-left_x-small"></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+            
         </p>
     </template>
 </template>

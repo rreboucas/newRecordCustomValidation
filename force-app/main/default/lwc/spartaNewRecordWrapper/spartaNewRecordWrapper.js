@@ -52,16 +52,20 @@ export default class SpartaNewRecordWrapper extends NavigationMixin(LightningEle
      }
 
      handleBackClick(){      // stop the form from submitting
-        console.log('SpartaNewRecordOverride - handleBackClick - entered');
-
-        this[NavigationMixin.Navigate]({
-            type: 'standard__recordPage',
-            attributes: {
-                recordId: this.parentId,
-                actionName: 'view'
-            }
-        });
-     }
+        
+        console.log('SpartaNewRecordOverride - handleBackClick - entered' );
+       
+            this[NavigationMixin.Navigate]({
+                type: 'standard__recordPage',
+                attributes: {
+                    recordId: this.parentId,
+                    actionName: 'view'
+                }
+            });
+        
+        
+        }
+     
 
     handleSuccess(event) {
         console.log('SpartaNewRecordOverride - handleSuccess - entered');
@@ -86,12 +90,27 @@ export default class SpartaNewRecordWrapper extends NavigationMixin(LightningEle
     }
 
     handleCancel(event){
-        console.log('SpartaNewRecordOverride - HandleCancel - entered');
+        console.log('SpartaNewRecordOverride - HandleCancel - entered - this.parentId: ' + this.parentId);
         const filters = 'test'
         const filterChangeEvent = new CustomEvent('filterchange', {
             detail: { filters },
         });
         // Fire the custom event
         this.dispatchEvent(filterChangeEvent);
+
+        if (this.parentId !== ' '){
+            this.handleBackClick();
+        }
+        else
+        {
+            console.log('SpartaNewRecordOverride - handleCancel - entered else - this.parentId: ' + this.parentId);
+            this[NavigationMixin.Navigate]({
+                type: 'standard__objectPage',
+                attributes: {
+                    objectApiName: 'testautonumdata__Quality_Event__c',
+                    actionName: 'home',
+                },
+        });
+        }
     }
 }

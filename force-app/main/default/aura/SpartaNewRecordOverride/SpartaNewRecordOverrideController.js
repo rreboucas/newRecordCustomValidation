@@ -1,13 +1,11 @@
 ({
 	doInit : function(cmp, event, helper) {
 		console.log('SpartaNewRecordOverride - donit - entered');
-		var recId = cmp.get("v.recordId")
-		console.log('SpartaNewRecordOverride - donit - parentId: ' + recId);
 
 		var modalBody;
 		$A.createComponent("c:spartaNewRecordWrapper", 
 		{
-			parentId : recId,
+			parentId : ' ',
 			"onfilterchange": cmp.getReference("c.closeQA")
 		},
            function(content, status) {
@@ -16,7 +14,7 @@
                    cmp.find('overlayLib').showCustomModal({
                        header: "New Quality Event",
                        body: modalBody,
-                       showCloseButton: true,
+                       showCloseButton: false,
                        cssClass: "mymodal",
                        closeCallback: function() {
                            //alert('You closed the alert!');
